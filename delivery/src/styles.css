@@ -1,1 +1,427 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+body {
+    font: 16px/1.5 'Roboto', Sans-serif !important;
+    height: 100%;
+    box-sizing: border-box;
+    background: #ecf0f5 !important;
+    color: #555 !important;
+}
+header {
+    display: inline-block;
+    height: 85px;
+    color: #fff;
+    background: #60B857;
+}
+nav {
+    float: right;
+    height: 100%;
+}
+.logo {
+    float: left;
+    margin-left: 15px;
+}
+.logo a {
+    text-decoration: none;
+    color: #fff;
+}
+.logo h1 {
+    margin: 0;
+    margin-top: 21px;
+}
+.logo:hover {
+    cursor: pointer;
+}
+.menu {
+    height: 100%;
+}
+.menu-item {
+    padding: 35px 10px 5px 10px;
+    text-transform: uppercase;
+    display: inline-block;
+    font-size: 14px;
+    text-decoration: none;
+    height: 100%;
+    color: #fff;
+}
+.menu-item:hover {
+    background-color: #26A019;
+    cursor: pointer;
+}
+.section-restaurant {
+    height: 100%;
+    padding: 15px 15px 0 15px;
+}
+.box-info {
+    display: block;
+    min-height: 197px;
+    background: #fff;
+    width: 100%;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    margin-bottom: 15px;
+}
+.box-info:hover {
+    background: #26A019;
+} 
+.box-info:hover .box-text, .box-info:hover .box-detail {
+    color: #fff;
+} 
+.box-icon {
+    padding: 10px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 2px;
+    display: block;
+    float: left;
+    height: 197px;
+    width: 100%;
+}
+.box-content {
+    padding: 10px 10px 0 10px;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+.box-text {
+    display: block;
+    font-size: 26px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 10px;
+    width: 100%;
+    float: left;
+}
+.box-detail {
+    float: left;
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    width: 100%;
+}
+.box-img {
+    min-height: 99%;
+    min-width: 99%;
+    max-height: 100%;
+    max-width: 100%;
+}
+.section-rest-header {
+    padding: 15px;
+}
+.rest-info {
+    display: block;
+    min-height: 173px;
+    background: #fff;
+    width: 100%;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+}
+.rest-icon {
+    padding: 10px;
+    display: block;
+    width: 100%;
+}
+.rest-content {
+    width: 100%;
+    padding: 10px 10px 10px 10px;
+    display: inline-block;
+    text-align: center;
+}
+.rest-name {
+    width: 100%;
+    display: block;
+    font-size: 26px;
+    font-weight: bold;
+}
+.rest-detail {
+    width: 100%;
+    display: block;
+}
+.cart {
+    margin-top: 15px;
+}
+.reset {
+    background: #fff !important;
+}
+a {
+    text-decoration: none;
+    color: #555;
+    cursor: pointer;
+}
+.white {
+    padding: 15px 0 15px 0;
+    background: #fff;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+}
+.dishes {
+    width: 100%;
+    border-top: 1px solid #ebe5e5;
+    border-bottom: 1px solid #ebe5e5;
+    padding: 0 15px 5px 15px;
+    margin-bottom: 15px;
+}
+.dishes h1 {
+    margin-bottom: 0;
+}
+.dishes p {
+    margin-top: 0;
+    text-align: left;
+}
+.dishes a {
+    text-align: right;
+    float: right;
+    color: #3c8dbc;
+    cursor: pointer;
+}
+.dishes:hover {
+    background: #26A019;
+    color: #fff;
+}
+.dishes:hover a {
+    color: #fff;
+}
+.price {
+    display: inline-block;
+    text-align: left !important;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+}
+.section-header {
+    padding: 15px 0 15px 0;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+.cart-item {
+    width: 100%;
+    border-top: 1px solid #ebe5e5;
+    border-bottom: 1px solid #ebe5e5;
+    padding: 0 15px 5px 15px;
+    margin-bottom: 15px;
+}
+.section-restaurant-menu {
+    min-height: 800px;
+}
+.dish-name {
+    text-align: left;
+    display: inline-block;
+}
+.add-remove {
+    margin-top: 20px;
+    float: right;
+}
+.cart-price {
+    text-align: right !important;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+}
+.cart-item:hover {
+    background: #26A019;
+    color: #fff;
+}
+.cart-item:hover .minus{
+    content: url('assets/images/minus-white.png')
+}
+.cart-item:hover .plus{
+    content: url('assets/images/plus-white.png')
+}
+.totals {
+    padding: 0 15px 0 15px;
+}
+.totals p {
+    text-align: left;
+    display: inline-block;
+}
+.total-value {
+    float: right;
+}
+.clean-pay {
+    padding: 0 10px 0 10px;
+    width: 100%;
+    display: inline-block;
+}
+.btn {
+    text-align: center;
+    width: 100%;
+    padding: 15px;
+    border: 0;
+    background: #555;
+    color: #fff;
+    min-height: 46px;
+}
+.clean {
+    background: #d43f3a;
+}
+.pay {
+    display: block;
+    width: 100%;
+    border-radius: 2px;
+    padding: 11px;
+    background: #60B857;
+    margin-bottom: 10px;
+}
+.pay:hover {
+    background: #26A019;
+}
+.clean:hover {
+    background: #b31c1c
+}
+.plus {
+    display: inline;
+    content: url('assets/images/plus.png')
+}
+.minus {
+    display: inline;
+    content: url('assets/images/minus.png')
+}
+.add-remove-m {
+    margin-right: 5px;
+}
+.about {
+    padding: 15px;
+    text-align: justify;
+}
+.about a {
+    text-decoration: underline;
+}
+.payment-form {
+    max-width: 100%;
+    padding: 0 15px 0 15px;
+}
+.form-input {
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.m-small-t {
+    margin-top: 15px;
+}
+.payment-header {
+    margin: 0;
+    padding: 15px;
+}
+.payment-text {
+    padding: 0 !important;
+    font-weight: bold;
+}
+.payment-option {
+    padding-bottom: 21px;
+}
+.cart-item-header {
+    margin: 0;
+    padding: 21px 0 21px 0;
+    border-top: 1px solid #ccc;
+}
+.item-icon {
+    margin-top: 16px;
+}
+.row {
+    border-top: 1px solid #ccc;
+    min-width: 100% !important;
+}
+.row:nth-child(even) {
+    background: #f7f5f5;
+}
+.cost {
+    text-align: right;
+}
+.total {
+    font-weight: bold;
+    font-size: 22px;
+    margin: 0;
+    padding: 5px 0 5px 0;
+}
+.order-totals {
+    min-height: 98px;
+    display: block;
+}
+.order-totals h3 {
+    display: block;
+}
+.order-totals p {
+    float: left;
+    display: block;
+}
+.payment-form .clean-pay {
+    padding: 0;
+}
+@media (min-width: 640px) {
+    nav {
+        float: left;
+    }
+    .logo {
+        height: 100%;
+        padding-right: 15px;
+        margin-left: 75px;
+    }
+    .txt {
+        top: 200px;
+    }
+    .btn-transparent {
+        width: 15%;
+    }
+    .menu-item {
+        font-size: 16px;
+    }
+    .section-restaurant {
+        padding: 20px;
+    }
+    .left {
+        float: left;
+        padding: 0 15px 0 15px; 
+    }
+    .menu-rest {
+        margin-top: 15px;
+    }
+    .box-icon {
+        float: left;
+        display: block;
+        max-height: 197px;
+        max-width: 250px;
+    }
+    .box-content {
+        text-align: left;
+        display: block;
+        float: left;
+        width: 45%;
+    }
+    .rest-icon {
+        float: left;
+        display: block;
+        max-height: 197px;
+        max-width: 250px;
+    }
+    .rest-content {
+        display: block;
+        width: 80%;
+        text-align: left;
+    }
+    .section-restaurant-menu {
+        min-height: 600px;
+    }
+    .clean {
+        float: right;
+        width: 154px;
+    }
+    .pay {
+        margin: 0 0 0 15px;
+        float: right;
+        width: 154px;
+    }
+    .form-input {
+        margin-left: 15px;
+    }
+    .select {
+        margin: 0 0 0 15px;
+    }
+    .form-text {
+        padding: 15px 0 0 0 !important;
+    }
+    .order-totals .cost {
+        padding-right: 15px
+    }
+}
