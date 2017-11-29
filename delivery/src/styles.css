@@ -3,14 +3,11 @@ body {
     font: 16px/1.5 'Roboto', Sans-serif !important;
     height: 100%;
     box-sizing: border-box;
-    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./assets/images/image-1.png") !important;
+    background: #ecf0f5 !important;
     color: #555 !important;
 }
-.home {
-    background: transparent;
-    color: #fff;
-}
 header {
+    width: 100%;
     display: inline-block;
     height: 85px;
     color: #fff;
@@ -50,6 +47,45 @@ nav {
 .menu-item:hover {
     background-color: #26A019;
     cursor: pointer;
+}
+.section-home {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+.txt {
+    text-align: center;
+    position: relative;
+    top: 100px;
+    margin: 0 15px 0 15px;
+}
+.txt h1 {
+    margin: 0;
+}
+.txt p {
+    margin: 0;
+    margin-bottom: 15px;
+}
+.container {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    position: relative;
+}
+.btn-transparent {
+    background: #60B857;
+    padding: 15px;
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+    display: block;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin: auto;
+    width: 100%;
+}
+.btn-transparent:hover {
+    background: #26A019;
 }
 .section-restaurant {
     height: 100%;
@@ -354,9 +390,6 @@ a {
     padding: 0;
 }
 @media (min-width: 640px) {
-    body {
-        background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./assets/images/image-2.png") !important;
-    }
     nav {
         float: left;
     }
