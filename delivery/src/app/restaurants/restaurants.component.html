@@ -1,13 +1,13 @@
 <section class="section-restaurant">
   <div class="small-12 medium-12 large-6 left" *ngFor="let restaurant of restaurants">
-    <a href="restaurant.html">
+    <a [routerLink]="['/restaurants', restaurant.id]">
       <div class="box-info">
         <span class="box-icon">
           <img class="box-img" src="../assets/images/image-3.png">
         </span>
         <div class="box-content">
-          <span class="box-text">{{restaurant.nome}}</span>
-          <span class="box-detail">{{restaurant.tipo_culinaria}}</span>
+          <span class="box-text">{{restaurant.name}}</span>
+          <span class="box-detail">{{restaurant.category}}</span>
         </div>
       </div>
     </a>
