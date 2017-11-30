@@ -5,7 +5,8 @@ import { AppComponent } from './app.component';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
-import { RouterModule } from '@angular/router'
+import { RouterModule } from '@angular/router';
+import { AboutComponent } from './about/about.component'
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { RouterModule } from '@angular/router'
     RestaurantsComponent,
     HomeComponent,
     HeaderComponent,
+    AboutComponent,
 
   ],
   imports: [
