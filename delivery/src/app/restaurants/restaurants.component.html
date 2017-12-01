@@ -3,7 +3,7 @@
     <a [routerLink]="['/restaurants', restaurant.id]">
       <div class="box-info">
         <span class="box-icon">
-          <img class="box-img" src="../assets/images/image-3.png">
+          <img class="box-img" [src]="restaurant.img_path">
         </span>
         <div class="box-content">
           <span class="box-text">{{restaurant.name}}</span>

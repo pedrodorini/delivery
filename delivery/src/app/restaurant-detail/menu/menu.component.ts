@@ -16,7 +16,9 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() {
     this.restaurantService.menuItems(this.router.snapshot.params["id"])
-    .subscribe(menuItems => this.menuItems = menuItems)
+    .subscribe(menuItems => {
+      this.menuItems = menuItems
+    })
   }
 
 }

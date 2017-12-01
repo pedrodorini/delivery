@@ -19,7 +19,7 @@ export class RestaurantsService {
     return this.http.get<Restaurant>(`${APP_API}/restaurants/${id}`)
   }
   menuItems(id: string): Observable<MenuItem[]> {
-    return this.http.get<MenuItem[]>(`${APP_API}/restaurants/${id}/menu`)
+    return this.http.get<MenuItem[]>(`${APP_API}/restaurants/items/${id}`)
 }
 
 }
