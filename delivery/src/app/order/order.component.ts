@@ -91,10 +91,13 @@ export class OrderComponent implements OnInit {
         this.order.payment_option = order.payment_option
 
         if (this.orderForm.valid) {
-            this.orderService.checkOrder(this.order).subscribe(order => this.orderId = order)
-            for (let items of this.cartItems()) {
-                this.orderService.orderItems(items.quantity, this.orderId, items.menuItem.id).subscribe(item => console.log(item))
-            }
+            this.orderService.checkOrder(this.order).subscribe(order => {
+                this.orderId = order
+                for (let items of this.cartItems()) {
+                    console.log(`quantity: ${items.quantity}, orderId: ${this.orderId}, menuItem: ${items.menuItem.id}`)
+                    this.orderService.orderItems(items.quantity, this.orderId, items.menuItem.id).subscribe(item => console.log(item))
+                }
+            })
             // this.orderService.orderItems()
             this.route.navigate(['/order-completed'])
         } else {
