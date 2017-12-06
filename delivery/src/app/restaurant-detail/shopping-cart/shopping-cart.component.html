@@ -6,8 +6,8 @@
       <div class="cart-item" *ngFor="let item of items()">
           <p class="dish-name">{{item.menuItem.name}}</p>
           <div class="add-remove">
-              <a class="add-remove-m"><i class="minus"></i></a>
-              <a class="add-remove-p"><i class="plus"></i></a>
+              <a class="add-remove-m" (click)="decreaseQty(item)"><i class="minus"></i></a>
+              <a class="add-remove-p" (click)="increaseQty(item)"><i class="plus"></i></a>
           </div>
           <p class="cart-price">{{item.value() | currency: 'BRL': true}}</p>
       </div>

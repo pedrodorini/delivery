@@ -13,23 +13,30 @@ export class ShoppingCartComponent implements OnInit {
   ngOnInit() {
   }
   items(): any[] {
-   return this.shoppingCartService.items;
- }
+    return this.shoppingCartService.items;
+  }
 
- clear(){
-   this.shoppingCartService.clear()
- }
+  clear(){
+    this.shoppingCartService.clear()
+  }
 
- removeItem(item: any){
-   this.shoppingCartService.removeItem(item)
- }
+  removeItem(item: any){
+    this.shoppingCartService.removeItem(item)
+  }
+  
+  addItem(item: any){
+    this.shoppingCartService.addItem(item)
+  }
 
- addItem(item: any){
-   this.shoppingCartService.addItem(item)
- }
+  total(): number {
+    return this.shoppingCartService.total()
+  }
 
- total(): number {
-   return this.shoppingCartService.total()
- }
+  increaseQty(item:any){
+    this.shoppingCartService.increaseQty(item)
+  }
+  decreaseQty(item: any){
+    this.shoppingCartService.decreaseQty(item)
+  }
 
 }
