@@ -16,15 +16,15 @@ export class ShoppingCartComponent implements OnInit {
     return this.shoppingCartService.items;
   }
 
-  clear(){
+  clear() {
     this.shoppingCartService.clear()
   }
 
-  removeItem(item: any){
+  removeItem(item: any) {
     this.shoppingCartService.removeItem(item)
   }
-  
-  addItem(item: any){
+
+  addItem(item: any) {
     this.shoppingCartService.addItem(item)
   }
 
@@ -32,10 +32,10 @@ export class ShoppingCartComponent implements OnInit {
     return this.shoppingCartService.total()
   }
 
-  increaseQty(item:any){
+  increaseQty(item: any) {
     this.shoppingCartService.increaseQty(item)
   }
-  decreaseQty(item: any){
+  decreaseQty(item: any) {
     this.shoppingCartService.decreaseQty(item)
   }
 

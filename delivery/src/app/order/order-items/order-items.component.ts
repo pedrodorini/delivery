@@ -2,7 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import {CartItem} from '../../restaurant-detail/shopping-cart/cart-item.model'
 
 @Component({
-  selector: 'mt-order-items',
+  selector: 'app-order-items',
   templateUrl: './order-items.component.html'
 })
 export class OrderItemsComponent implements OnInit {
@@ -18,15 +18,15 @@ export class OrderItemsComponent implements OnInit {
   ngOnInit() {
   }
 
-  emitIncreaseQty(item:CartItem){
+  emitIncreaseQty(item: CartItem) {
       this.increaseQty.emit(item)
   }
 
-  emitDecreaseQty(item:CartItem){
+  emitDecreaseQty(item: CartItem) {
       this.decreaseQty.emit(item)
   }
 
-  emitRemoveQty(item:CartItem){
+  emitRemoveQty(item: CartItem) {
       this.removeQty.emit(item)
   }
 

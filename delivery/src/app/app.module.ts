@@ -3,7 +3,7 @@ import { NgModule, LOCALE_ID } from '@angular/core';
 import { ROUTES } from './app.routes'
 import { AppComponent } from './app.component';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RestaurantsService } from './restaurants/restaurants.service'
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
@@ -39,6 +39,7 @@ import { OrderService } from './order/order.service';
   imports: [
     BrowserModule,
     HttpClientModule,
+    ReactiveFormsModule,
     FormsModule,
     RouterModule.forRoot(ROUTES)
   ],

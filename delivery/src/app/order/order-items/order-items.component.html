@@ -1,35 +1,14 @@
-<div *ngIf="!items">
-    <p>
-        Nao ha itens no seu carrinho <a [routerLink]="['/restaurants']">weee</a>
-    </p>
-</div>
-<div class="col-xs-12 table-responsive" *ngIf="items">
-
-  <div class="table table-striped">
-    <div>
-    <div>
-      <div class="text-center">Quantidade</div>
-      <div>Item</div>
-      <div>Descrição</div>
-      <div class="text-right">Subtotal</div>
-      <div class="text-right"></div>
-    </div>
-    </div>
-    <div>
-    <div *ngFor = "let item of items">
-      <div class="text-center">
-        <a (click)="emitDecreaseQty(item)" class="btn btn-sm"><i class="fa fa-minus"></i></a>
-        {{item.quantity}}
-        <a (click)="emitIncreaseQty(item)" class="btn btn-sm"><i class="fa fa-minus"></i></a>
-        <a class="btn btn-sm"><i class="fa fa-plus"></i></a>
-      </div>
-      <div>{{item.menuItem.name}}</div>
-      <div>{{item.menuItem.Descricao}}</div>
-      <div class="text-right">{{item.value() | currency: 'BRL': true}}</div>
-      <div class="text-right">
-        <a (click)="emitRemoveQty(item)" class="btn btn-sm danger"> <i class="fa fa-remove"> </i> </a>
-      </div>
+<div class="small-12 row" *ngFor="let item of items">
+  <div class="small-1 large-1 column item-icon">
+      <a><i class="minus"></i></a>
   </div>
-    </div>
+  <div class="small-1 large-1 column item-icon">
+          <a><i class="plus"></i></a>
+  </div>
+  <div class="small-6 large-9 column">
+      <p><b> {{item.quantity}} </b> {{item.menuItem.name}} </p>
+  </div>
+  <div class="small-3 large-1 column">
+      <p class="cost"> {{item.value() | currency: 'BRL': true}} </p>
   </div>
 </div>

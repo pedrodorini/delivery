@@ -1,24 +1,38 @@
 import {Injectable} from '@angular/core'
 import {ShoppingCartService} from '../restaurant-detail/shopping-cart/shopping-cart.service'
 import {CartItem} from '../restaurant-detail/shopping-cart/cart-item.model'
+import { Observable } from 'rxjs/Observable';
+import { Order } from './order.model';
+import { APP_API } from '../app.api';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class OrderService {
-    constructor(private cartService: ShoppingCartService){}
+    constructor(private cartService: ShoppingCartService,
+                private http: HttpClient) {}
 
-    cartItems(): CartItem[]{
+    cartItems(): CartItem[] {
         return this.cartService.items
     }
 
-    increaseQty(item: CartItem){
+    increaseQty(item: CartItem) {
         this.cartService.increaseQty(item)
     }
 
-    decreaseQty(item: CartItem){
+    decreaseQty(item: CartItem) {
         this.cartService.decreaseQty(item)
     }
 
-    remove(item: CartItem){
+    remove(item: CartItem) {
         this.cartService.removeItem(item)
+    }
+    checkOrder(order: Order): Observable<any> {
+        return this.http.post<Order>(`${APP_API}/orders`, order).map(order => order.id)
+    }
+    clear() {
+        this.cartService.clear()
+    }
+    itemsValue(): number {
+        return this.cartService.total();
     }
 }
