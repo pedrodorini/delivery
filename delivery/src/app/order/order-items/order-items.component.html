@@ -1,9 +1,9 @@
 <div class="small-12 row" *ngFor="let item of items">
   <div class="small-1 large-1 column item-icon">
-      <a><i class="minus"></i></a>
+      <a (click)="emitDecreaseQty(item)"><i class="minus"></i></a>
   </div>
   <div class="small-1 large-1 column item-icon">
-          <a><i class="plus"></i></a>
+        <a (click)="emitIncreaseQty(item)" ><i class="plus"></i></a>
   </div>
   <div class="small-6 large-9 column">
       <p><b> {{item.quantity}} </b> {{item.menuItem.name}} </p>
