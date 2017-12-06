@@ -10,7 +10,7 @@
                   <input class="small-12 large-2 form-input" type="text" placeholder="Complemento" formControlName='complement'>
                   <div class="payment-option">
                       <p class="small-12 column payment-text">Opção de pagamento:</p>
-                      <select class="small-12 large-2 form-input select"  formControlName="paymentOption" [(value)]="paymentOption">
+                      <select class="small-12 large-2 form-input select"  formControlName="payment_option" [(value)]="paymentOption">
                           <option value="cash">Dinheiro</option>
                           <option value="credit">Cartão de crédito</option>
                           <option value="debit">Débito</option>
@@ -19,7 +19,7 @@
                   <h1 class="cart-item-header">Itens no carrinho:</h1>
                   <div class="table">
                       <app-order-items [items]="cartItems()" (increaseQty)="increaseQty($event)"
-                      (decreaseQty)="decreaseQty($event)"></app-order-items> 
+                      (decreaseQty)="decreaseQty($event)"></app-order-items>
                   </div>
                   <div class="order-totals">
                       <p class="small-9 delivery-text">Taxa de entrega:</p>

@@ -3,7 +3,7 @@ class Order {
         public address: string,
         public number: number,
         public complement: string,
-        public paymentOption: string,
+        public payment_option: string,
         public id?: number
     ) {}
 }

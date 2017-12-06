@@ -15,12 +15,12 @@ export class OrderComponent implements OnInit {
     deliveryFee = 3
     orderForm: FormGroup
     orderId: number
-    paymentOption = 'cash'
-    order = {
+    payment_option = 'cash'
+    order: Order = {
         address: '',
         number: 0,
         complement: '',
-        paymentOption: ''
+        payment_option: ''
     }
 
     constructor(private orderService: OrderService,
@@ -33,7 +33,7 @@ export class OrderComponent implements OnInit {
             number: this.formBuilder.control('', [Validators.required]),
             complement: this.formBuilder.control(''),
             address: this.formBuilder.control('', [Validators.required, Validators.minLength(5)]),
-            paymentOption: this.formBuilder.control(this.paymentOption, [Validators.required])
+            payment_option: this.formBuilder.control(this.payment_option, [Validators.required])
         })
     }
     itemsValue(): number {
@@ -67,11 +67,11 @@ export class OrderComponent implements OnInit {
         this.order.address = order.address
         this.order.number = order.number
         this.order.complement = order.complement
-        this.order.paymentOption = order.paymentOption
+        this.order.payment_option = order.payment_option
 
         console.log(this.order)
         if (this.orderForm.valid) {
-            this.orderService.checkOrder(order).subscribe(order => console.log(order))
+            this.orderService.checkOrder(this.order).subscribe(order => console.log(order))
         }
     //     order.orderItems = this.cartItems()
     //     .map((item: CartItem) => new OrderItem(item.quantity, item.menuItem.id))
