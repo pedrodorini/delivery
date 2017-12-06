@@ -4,13 +4,13 @@
           <h1 class="payment-header">Pagamento:</h1>
           <form [formGroup]="orderForm">
               <div class="payment-form">
-                  <input class="small-12 large-4 form-input" type="text" placeholder="Name" formControlName='name'>
-                  <input class="small-12 large-3 form-input" type="text" placeholder="Address" formControlName='address'>
-                  <input class="small-12 large-2 form-input" type="text" placeholder="Number" formControlName='number'>
-                  <input class="small-12 large-2 form-input" type="text" placeholder="Complement" formControlName='complement'>
+                  <input class="small-12 large-4 form-input" type="text" placeholder="Nome" formControlName='name'>
+                  <input class="small-12 large-3 form-input" type="text" placeholder="Endereço" formControlName='address'>
+                  <input class="small-12 large-2 form-input" type="text" placeholder="Numero" formControlName='number'>
+                  <input class="small-12 large-2 form-input" type="text" placeholder="Complemento" formControlName='complement'>
                   <div class="payment-option">
                       <p class="small-12 column payment-text">Opção de pagamento:</p>
-                      <select class="small-12 large-2 form-input select">
+                      <select class="small-12 large-2 form-input select"  formControlName="paymentOption" [(value)]="paymentOption">
                           <option value="cash">Dinheiro</option>
                           <option value="credit">Cartão de crédito</option>
                           <option value="debit">Débito</option>
@@ -23,7 +23,7 @@
                   </div>
                   <div class="order-totals">
                       <p class="small-9 delivery-text">Taxa de entrega:</p>
-                      <p class="small-3 delivery-text cost">{{deliveryFee}}</p>
+                      <p class="small-3 delivery-text cost">{{deliveryFee | currency:'BRL': true}}</p>
                       <p class="small-9 delivery-text total">Total:</p>
                       <p class="small-3 delivery-text cost">{{total() | currency:'BRL': true}}</p>
                   </div>

@@ -15,20 +15,27 @@ export class OrderComponent implements OnInit {
     deliveryFee = 3
     orderForm: FormGroup
     orderId: number
+    paymentOption = 'cash'
+    order = {
+        address: '',
+        number: 0,
+        complement: '',
+        paymentOption: ''
+    }
 
     constructor(private orderService: OrderService,
-              private formBuilder: FormBuilder,
-              private route: Router) {}
+                private formBuilder: FormBuilder,
+                private route: Router) {}
 
     ngOnInit() {
         this.orderForm = this.formBuilder.group({
             name: this.formBuilder.control('', [Validators.required, Validators.minLength(4)]),
-            address: this.formBuilder.control('', [Validators.required, Validators.minLength(5)]),
             number: this.formBuilder.control('', [Validators.required]),
-            complement: this.formBuilder.control('')
+            complement: this.formBuilder.control(''),
+            address: this.formBuilder.control('', [Validators.required, Validators.minLength(5)]),
+            paymentOption: this.formBuilder.control(this.paymentOption, [Validators.required])
         })
     }
-
     itemsValue(): number {
         return this.orderService.itemsValue()
     }
@@ -57,14 +64,23 @@ export class OrderComponent implements OnInit {
         return itemsValue += this.deliveryFee
     }
     checkOrder(order: Order) {
-        order.orderItems = this.cartItems()
-        .map((item: CartItem) => new OrderItem(item.quantity, item.menuItem.id))
-        this.orderService.checkOrder(order)
-        .do((orderId: number) => {
-            this.orderId = orderId
-        })
-      .subscribe((orderId: number) => {
-          this.orderService.clear();
-      })
+        this.order.address = order.address
+        this.order.number = order.number
+        this.order.complement = order.complement
+        this.order.paymentOption = order.paymentOption
+
+        console.log(this.order)
+        if (this.orderForm.valid) {
+            this.orderService.checkOrder(order).subscribe(order => console.log(order))
+        }
+    //     order.orderItems = this.cartItems()
+    //     .map((item: CartItem) => new OrderItem(item.quantity, item.menuItem.id))
+    //     this.orderService.checkOrder(order)
+    //     .do((orderId: number) => {
+    //         this.orderId = orderId
+    //     })
+    //   .subscribe((orderId: number) => {
+    //       this.orderService.clear();
+    //   })
     }
 }
