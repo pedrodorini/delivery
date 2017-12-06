@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail.component';
 import { MenuComponent } from './restaurant-detail/menu/menu.component';
 import { ShoppingCartComponent } from './restaurant-detail/shopping-cart/shopping-cart.component';
+import { ShoppingCartService } from './restaurant-detail/shopping-cart/shopping-cart.service';
 import { MenuItemComponent } from './restaurant-detail/menu-item/menu-item.component';
 
 @NgModule({
@@ -33,8 +34,9 @@ import { MenuItemComponent } from './restaurant-detail/menu-item/menu-item.compo
     RouterModule.forRoot(ROUTES)
   ],
   providers: [RestaurantsService,
-             {provide: LOCALE_ID, useValue: 'pt-BR'}
-            ],
+    {provide: LOCALE_ID, useValue: 'pt-BR'},
+    ShoppingCartService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

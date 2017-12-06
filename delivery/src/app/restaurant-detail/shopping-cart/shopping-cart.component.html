@@ -3,21 +3,21 @@
       <div class="section-header">
           <span>Cart</span>
       </div>
-      <div class="cart-item">
-          <p class="dish-name">1x Dish Name</p>
+      <div class="cart-item" *ngFor="let item of items()">
+          <p class="dish-name">{{item.menuItem.name}}</p>
           <div class="add-remove">
               <a class="add-remove-m"><i class="minus"></i></a>
               <a class="add-remove-p"><i class="plus"></i></a>
           </div>
-          <p class="cart-price">$15.00</p>
+          <p class="cart-price">{{item.value() | currency: 'BRL': true}}</p>
       </div>
       <div class="totals">
           <p>Total: </p>
-          <p class="total-value">$15.00</p>
+          <p class="total-value">{{total() | currency: 'BRL': true}}</p>
       </div>
       <div class="clean-pay">
           <a class="btn pay" href="payment.html">Pay</a>
-          <button class="btn clean">Clean Cart</button>
+          <button class="btn clean" (click)="clear()">Clean Cart</button>
       </div>
   </div>
 </div>
