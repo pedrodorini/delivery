@@ -3,6 +3,7 @@
       <div class="section-header">
           <span>Menu</span>
       </div>
-      <app-menu-item *ngFor="let item of menuItems" [menuItem]="item"></app-menu-item>
+      <app-menu-item *ngFor="let item of menuItems" [menuItem]="item" (add)="shoppingCart.addItem($event)"></app-menu-item>
   </div>
 </div>
+<app-shopping-cart #shoppingCart></app-shopping-cart>

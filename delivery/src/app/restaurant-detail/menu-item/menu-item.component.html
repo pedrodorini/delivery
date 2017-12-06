@@ -2,5 +2,5 @@
   <h1>{{menuItem.name}}</h1>
   <p>{{menuItem.description}}</p>
   <p class="price">{{menuItem.price | currency: 'BRL': true}}</p>
-  <a>+ Add to cart</a>
+  <a (click)="emitAddEvent()">+ Add to cart</a>
 </div>
