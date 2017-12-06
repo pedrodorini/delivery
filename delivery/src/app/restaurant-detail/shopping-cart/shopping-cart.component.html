@@ -4,7 +4,7 @@
           <span>Cart</span>
       </div>
       <div class="cart-item" *ngFor="let item of items()">
-          <p class="dish-name">{{item.menuItem.name}}</p>
+          <p class="dish-name">({{item.quantity}}){{item.menuItem.name}}</p>
           <div class="add-remove">
               <a class="add-remove-m" (click)="decreaseQty(item)"><i class="minus"></i></a>
               <a class="add-remove-p" (click)="increaseQty(item)"><i class="plus"></i></a>
@@ -16,7 +16,7 @@
           <p class="total-value">{{total() | currency: 'BRL': true}}</p>
       </div>
       <div class="clean-pay">
-          <a class="btn pay" href="payment.html">Pay</a>
+          <a [routerLink]="['/order']" class="btn pay" href="payment.html">Pay</a>
           <button class="btn clean" (click)="clear()">Clean Cart</button>
       </div>
   </div>

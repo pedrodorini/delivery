@@ -3,6 +3,7 @@ import { NgModule, LOCALE_ID } from '@angular/core';
 import { ROUTES } from './app.routes'
 import { AppComponent } from './app.component';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
+import { FormsModule } from '@angular/forms';
 import { RestaurantsService } from './restaurants/restaurants.service'
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
@@ -14,6 +15,10 @@ import { MenuComponent } from './restaurant-detail/menu/menu.component';
 import { ShoppingCartComponent } from './restaurant-detail/shopping-cart/shopping-cart.component';
 import { ShoppingCartService } from './restaurant-detail/shopping-cart/shopping-cart.service';
 import { MenuItemComponent } from './restaurant-detail/menu-item/menu-item.component';
+import { OrderComponent } from './order/order.component';
+import { RadioComponent } from './shared/radio/radio.component';
+import { OrderItemsComponent } from './order/order-items/order-items.component';
+import { OrderService } from './order/order.service';
 
 @NgModule({
   declarations: [
@@ -26,16 +31,21 @@ import { MenuItemComponent } from './restaurant-detail/menu-item/menu-item.compo
     MenuComponent,
     ShoppingCartComponent,
     MenuItemComponent,
+    OrderComponent,
+    RadioComponent,
+    OrderItemsComponent
 
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot(ROUTES)
   ],
   providers: [RestaurantsService,
     {provide: LOCALE_ID, useValue: 'pt-BR'},
-    ShoppingCartService
+    ShoppingCartService,
+    OrderService
   ],
   bootstrap: [AppComponent]
 })
