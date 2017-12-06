@@ -1,7 +1,7 @@
 <div class="small-12 large-5 column cart">
   <div class="white">
       <div class="section-header">
-          <span>Cart</span>
+          <span>Carrinho</span>
       </div>
       <div class="cart-item" *ngFor="let item of items()">
           <p class="dish-name">({{item.quantity}}){{item.menuItem.name}}</p>
@@ -17,7 +17,7 @@
       </div>
       <div class="clean-pay">
           <a [routerLink]="['/order']" class="btn pay" href="payment.html">Pay</a>
-          <button class="btn clean" (click)="clear()">Clean Cart</button>
+          <button class="btn clean" (click)="clear()">Limpar carrinho</button>
       </div>
   </div>
 </div>

@@ -16,57 +16,55 @@ export class OrderComponent implements OnInit {
     orderForm: FormGroup
     orderId: number
 
-  constructor(private orderService: OrderService,
+    constructor(private orderService: OrderService,
               private formBuilder: FormBuilder,
               private route: Router) {}
 
-  ngOnInit() {
-      this.orderForm = this.formBuilder.group({
-          name: this.formBuilder.control('', [Validators.required, Validators.minLength(4)]),
-          address: this.formBuilder.control('', [Validators.required, Validators.minLength(5)]),
-          number: this.formBuilder.control('', [Validators.required]),
-          complement: this.formBuilder.control('')
-      })
-  }
+    ngOnInit() {
+        this.orderForm = this.formBuilder.group({
+            name: this.formBuilder.control('', [Validators.required, Validators.minLength(4)]),
+            address: this.formBuilder.control('', [Validators.required, Validators.minLength(5)]),
+            number: this.formBuilder.control('', [Validators.required]),
+            complement: this.formBuilder.control('')
+        })
+    }
 
-  itemsValue(): number {
-    return this.orderService.itemsValue()
-}
+    itemsValue(): number {
+        return this.orderService.itemsValue()
+    }
 
-  cartItems(): CartItem[] {
-      return this.orderService.cartItems()
-  }
+    cartItems(): CartItem[] {
+        return this.orderService.cartItems()
+    }
 
-  increaseQty(item: CartItem) {
-      this.orderService.increaseQty(item)
-  }
+    increaseQty(item: CartItem) {
+        this.orderService.increaseQty(item)
+    }
 
-  decreaseQty(item: CartItem) {
-      this.orderService.decreaseQty(item)
-  }
+    decreaseQty(item: CartItem) {
+        this.orderService.decreaseQty(item)
+    }
 
-  remove(item: CartItem) {
-      this.orderService.remove(item)
-  }
-  clear() {
-    this.orderService.clear();
-  }
+    remove(item: CartItem) {
+        this.orderService.remove(item)
+    }
+    clear() {
+        this.orderService.clear();
+    }
 
-  total() {
-    let itemsValue = this.itemsValue()
-    return itemsValue += this.deliveryFee
-
- }
-  checkOrder(order: Order) {
-      order.orderItems = this.cartItems()
-      .map((item: CartItem) => new OrderItem(item.quantity, item.menuItem.id))
-      this.orderService.checkOrder(order)
-      .do((orderId: number) => {
-          this.orderId = orderId
-      })
+    total() {
+        let itemsValue = this.itemsValue()
+        return itemsValue += this.deliveryFee
+    }
+    checkOrder(order: Order) {
+        order.orderItems = this.cartItems()
+        .map((item: CartItem) => new OrderItem(item.quantity, item.menuItem.id))
+        this.orderService.checkOrder(order)
+        .do((orderId: number) => {
+            this.orderId = orderId
+        })
       .subscribe((orderId: number) => {
           this.orderService.clear();
       })
-  }
-
+    }
 }

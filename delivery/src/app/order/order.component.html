@@ -1,7 +1,7 @@
 <section>
   <div class="small-12 column m-small-t">
       <div class="white">
-          <h1 class="payment-header">Payment:</h1>
+          <h1 class="payment-header">Pagamento:</h1>
           <form [formGroup]="orderForm">
               <div class="payment-form">
                   <input class="small-12 large-4 form-input" type="text" placeholder="Name" formControlName='name'>
@@ -9,14 +9,14 @@
                   <input class="small-12 large-2 form-input" type="text" placeholder="Number" formControlName='number'>
                   <input class="small-12 large-2 form-input" type="text" placeholder="Complement" formControlName='complement'>
                   <div class="payment-option">
-                      <p class="small-12 column payment-text">Payment Option:</p>
+                      <p class="small-12 column payment-text">Opção de pagamento:</p>
                       <select class="small-12 large-2 form-input select">
-                          <option value="cash">Cash</option>
-                          <option value="credit">Credit Card</option>
-                          <option value="debit">Debit</option>
+                          <option value="cash">Dinheiro</option>
+                          <option value="credit">Cartão de crédito</option>
+                          <option value="debit">Débito</option>
                       </select>
                   </div>
-                  <h1 class="cart-item-header">Cart Items:</h1>
+                  <h1 class="cart-item-header">Itens no carrinho:</h1>
                   <div class="table">
                       <app-order-items [items]="cartItems()" (increaseQty)="increaseQty($event)"
                       (decreaseQty)="decreaseQty($event)"></app-order-items> 
@@ -28,8 +28,8 @@
                       <p class="small-3 delivery-text cost">{{total() | currency:'BRL': true}}</p>
                   </div>
                   <div class="clean-pay">
-                       <a (click)="checkOrder(orderForm.value)" class="btn pay">Pay</a>
-                       <button (click)="clear()" class="btn clean">Clean Cart</button>
+                       <a (click)="checkOrder(orderForm.value)" class="btn pay">Pagar</a>
+                       <button (click)="clear()" class="btn clean">Limpar carrinho</button>
                    </div>
               </div>
           </form>

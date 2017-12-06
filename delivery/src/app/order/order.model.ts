@@ -5,7 +5,7 @@ class Order {
         public complement: string,
         public paymentOption: string,
         public orderItems: OrderItem[] = [],
-        public id?: string
+        public id?: number
     ) {}
 }
 
