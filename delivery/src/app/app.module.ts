@@ -16,7 +16,6 @@ import { ShoppingCartComponent } from './restaurant-detail/shopping-cart/shoppin
 import { ShoppingCartService } from './restaurant-detail/shopping-cart/shopping-cart.service';
 import { MenuItemComponent } from './restaurant-detail/menu-item/menu-item.component';
 import { OrderComponent } from './order/order.component';
-import { RadioComponent } from './shared/radio/radio.component';
 import { OrderItemsComponent } from './order/order-items/order-items.component';
 import { OrderService } from './order/order.service';
 
@@ -32,7 +31,6 @@ import { OrderService } from './order/order.service';
     ShoppingCartComponent,
     MenuItemComponent,
     OrderComponent,
-    RadioComponent,
     OrderItemsComponent
 
   ],
