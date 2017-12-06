@@ -4,13 +4,13 @@
           <h1 class="payment-header">Pagamento:</h1>
           <form [formGroup]="orderForm">
               <div class="payment-form">
-                  <input class="small-12 large-4 form-input" type="text" placeholder="Nome" formControlName='name'>
-                  <input class="small-12 large-3 form-input" type="text" placeholder="Endereço" formControlName='address'>
-                  <input class="small-12 large-2 form-input" type="text" placeholder="Numero" formControlName='number'>
-                  <input class="small-12 large-2 form-input" type="text" placeholder="Complemento" formControlName='complement'>
+                  <input [class.has-success]="hasSuccessName()" [class.has-error]="hasErrorName()" class="small-12 large-4 form-input" name="name" type="text" placeholder="Nome" formControlName='name'>
+                  <input [class.has-success]="hasSuccessAddress()" [class.has-error]="hasErrorAddress()" class="small-12 large-3 form-input" type="text" placeholder="Endereço" formControlName='address'>
+                  <input [class.has-success]="hasSuccessNumber()" [class.has-error]="hasErrorNumber()" class="small-12 large-2 form-input" type="text" placeholder="Numero" formControlName='number'>
+                  <input [class.has-success]="hasSuccessComplement()" class="small-12 large-2 form-input" type="text" placeholder="Complemento" formControlName='complement'>
                   <div class="payment-option">
                       <p class="small-12 column payment-text">Opção de pagamento:</p>
-                      <select class="small-12 large-2 form-input select"  formControlName="payment_option" [(value)]="paymentOption">
+                      <select class="small-12 large-2 form-input select"  formControlName="payment_option" [(value)]="payment_option">
                           <option value="cash">Dinheiro</option>
                           <option value="credit">Cartão de crédito</option>
                           <option value="debit">Débito</option>

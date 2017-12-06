@@ -18,6 +18,7 @@ import { MenuItemComponent } from './restaurant-detail/menu-item/menu-item.compo
 import { OrderComponent } from './order/order.component';
 import { OrderItemsComponent } from './order/order-items/order-items.component';
 import { OrderService } from './order/order.service';
+import { OrderCompletedComponent } from './order-completed/order-completed.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { OrderService } from './order/order.service';
     ShoppingCartComponent,
     MenuItemComponent,
     OrderComponent,
-    OrderItemsComponent
+    OrderItemsComponent,
+    OrderCompletedComponent
 
   ],
   imports: [

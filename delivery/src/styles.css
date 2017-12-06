@@ -389,7 +389,19 @@ a {
 .payment-form .clean-pay {
     padding: 0;
 }
+.txt-center {
+    text-align: center;
+}
+.has-error {
+    border: 1px solid red;
+}
+.has-success {
+    border: 1px solid green;
+}
 @media (min-width: 640px) {
+    input {
+        outline: none;
+    }
     nav {
         float: left;
     }

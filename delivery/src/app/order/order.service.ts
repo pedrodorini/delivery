@@ -36,4 +36,12 @@ export class OrderService {
     itemsValue(): number {
         return this.cartService.total();
     }
+    orderItems(quantity: number, idOrder: number, menuId: number): Observable<any> {
+        let item = {
+            quantity: quantity,
+            idorders: idOrder,
+            idrestaurantsitems: menuId
+        }
+        return this.http.post<any>(`${APP_API}/orders/items`, item).map(item => item)
+    }
 }

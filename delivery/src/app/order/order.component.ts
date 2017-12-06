@@ -63,24 +63,42 @@ export class OrderComponent implements OnInit {
         let itemsValue = this.itemsValue()
         return itemsValue += this.deliveryFee
     }
+    hasErrorName(): boolean {
+        return !this.orderForm.controls.name.valid && this.orderForm.controls.name.touched
+    }
+    hasSuccessName(): boolean {
+        return this.orderForm.controls.name.valid && this.orderForm.controls.name.touched
+    }
+    hasErrorAddress(): boolean {
+        return !this.orderForm.controls.address.valid && this.orderForm.controls.address.touched
+    }
+    hasSuccessAddress(): boolean {
+        return this.orderForm.controls.address.valid && this.orderForm.controls.address.touched
+    }
+    hasErrorNumber(): boolean {
+        return !this.orderForm.controls.number.valid && this.orderForm.controls.number.touched
+    }
+    hasSuccessNumber(): boolean {
+        return this.orderForm.controls.number.valid && this.orderForm.controls.number.touched
+    }
+    hasSuccessComplement(): boolean {
+        return this.orderForm.controls.complement.valid && this.orderForm.controls.complement.touched
+    }
     checkOrder(order: Order) {
         this.order.address = order.address
         this.order.number = order.number
         this.order.complement = order.complement
         this.order.payment_option = order.payment_option
 
-        console.log(this.order)
         if (this.orderForm.valid) {
-            this.orderService.checkOrder(this.order).subscribe(order => console.log(order))
+            this.orderService.checkOrder(this.order).subscribe(order => this.orderId = order)
+            for (let items of this.cartItems()) {
+                this.orderService.orderItems(items.quantity, this.orderId, items.menuItem.id).subscribe(item => console.log(item))
+            }
+            // this.orderService.orderItems()
+            this.route.navigate(['/order-completed'])
+        } else {
+            window.alert(`Formulario inválido\nAs seguintes informações devem ser preenchidas:\n1-Endereço(min. 5 caracteres)\n2-Nome(min. 4 caracteres)`)
         }
-    //     order.orderItems = this.cartItems()
-    //     .map((item: CartItem) => new OrderItem(item.quantity, item.menuItem.id))
-    //     this.orderService.checkOrder(order)
-    //     .do((orderId: number) => {
-    //         this.orderId = orderId
-    //     })
-    //   .subscribe((orderId: number) => {
-    //       this.orderService.clear();
-    //   })
     }
 }
