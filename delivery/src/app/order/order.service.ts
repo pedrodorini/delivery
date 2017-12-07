@@ -38,10 +38,15 @@ export class OrderService {
     }
     orderItems(quantity: number, idOrder: number, menuId: number): Observable<any> {
         let item = {
-            quantity: quantity,
-            idorders: idOrder,
-            idrestaurantsitems: menuId
+            quantity: 0,
+            orders: {id: 0},
+            restaurantsItems: {id: 0}
         }
+
+        item.quantity = quantity
+        item.orders.id = idOrder
+        item.restaurantsItems.id = menuId
+
         return this.http.post<any>(`${APP_API}/orders/items`, item).map(item => item)
     }
 }
